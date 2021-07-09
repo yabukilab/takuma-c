@@ -16,7 +16,11 @@
             </tr>
             <tr>
                 <th>パスワード</th>
-                <td><input type="password" name="password" placeholder="パスワード" /></td>
+                <td><input type="password" name="password" class="form-control" placeholder="パスワード" /></td>
+            </tr>
+            <tr>
+                <th>パスワード確認</th>
+                <td><input type="password" name="confirm" class="form-control" placeholder="パスワード" oninput="CheckPassword(this)" required /></td>
             </tr>
         </table>
         <input type="submit" value="送信" />

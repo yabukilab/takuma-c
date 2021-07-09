@@ -6,19 +6,6 @@
     <link rel="stylesheet" href="style.css" />
     <title>新規登録</title>
 </head>
-<script>
-    function CheckPassword(confirm) {
-        // 入力値取得
-        var input1 = password.value;
-        var input2 = confirm.value;
-        // パスワード比較
-        if (input1 != input2) {
-            confirm.setCustomValidity("入力値が一致しません。");
-        } else {
-            confirm.setCustomValidity('');
-        }
-    }
-</script>
 
 <body>
     <form action="新規登録.php" method="post">
@@ -39,6 +26,20 @@
         <input type="submit" value="送信" />
         <input type="reset" value="リセット" />
     </form>
+    <script>
+        function CheckPassword(confirm) {
+            // 入力値取得
+            var input1 = password.value;
+            var input2 = confirm.value;
+            // パスワード比較
+            if (input1 != input2) {
+                confirm.setCustomValidity("入力値が一致しません。");
+            } else {
+                confirm.setCustomValidity('');
+            }
+        }
+    </script>
+
 </body>
 
 </html>

@@ -25,12 +25,9 @@ $prepare = $db->prepare($sql); # 準備
 $prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1
 $prepare->bindValue(':p', $p, PDO::PARAM_STR);         # 埋め込み2
 
-//$staff_pass、$staff_pass2が一致しなければ、エラーメッセージを表示する
-if($p!=$p2){ //もしパスワード1とパスワード2の値が異なるなら
-  $message =  "パスワードが一致しません"("Location:新規登録.php")"こちら</a>からやり直して下さい";
-  else {
-    $message =  "登録が完了しました"("Location:ログイン.php")"こちら</a>からログインし直して下さい";
-  }
+$prepare->execute(); # 実行
+?>
 
+    <p>登録が完了しました<a href="ログイン.php">こちら</a>からログインし直して下さい</p>
   </body>
 </html>

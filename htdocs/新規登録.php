@@ -24,7 +24,6 @@ $prepare = $db->prepare($sql); # 準備
 
 $prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1
 $prepare->bindValue(':p', $p, PDO::PARAM_STR);         # 埋め込み2
-$prepare->bindValue(':p2', $p2, PDO::PARAM_STR);         # 埋め込み3
 
 //$staff_pass、$staff_pass2が一致しなければ、エラーメッセージを表示する
 if($p!=$p2){ //もしパスワード1とパスワード2の値が異なるなら

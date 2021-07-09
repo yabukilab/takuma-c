@@ -11,7 +11,7 @@
 # 送信されたデータの取得
 $name = $_POST['username'];  # ID
 $p = $_POST['password'];  # パスワード
-$p2 = $_POST['password2'];  # パスワード
+$p2 = $_POST['confirm'];  # パスワード
 
 
 $name=htmlspecialchars($name,ENT_QUOTES,'UTF-8'); //文字列に変換（セキュリティ対策）

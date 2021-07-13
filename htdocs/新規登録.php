@@ -5,10 +5,6 @@ $p = $_POST['password'];  # パスワード
 $p2 = $_POST['password_conf'];  # パスワード
 
 $err =[]
-$name=htmlspecialchars($name,ENT_QUOTES,'UTF-8'); //文字列に変換（セキュリティ対策）
-$p=htmlspecialchars($p,ENT_QUOTES,'UTF-8'); //文字列に変換（セキュリティ対策）
-$p2=htmlspecialchars($p2,ENT_QUOTES,'UTF-8'); //文字列に変換（セキュリティ対策）
-
 require 'db.php'; # 接続
 $sql = 'insert into  log_data ( username, passwd) values (:name, :p)';
 $prepare = $db->prepare($sql); # 準備

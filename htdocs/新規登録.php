@@ -1,16 +1,17 @@
 <?php
+require 'db.php'; # 接続
+$sql = 'insert into  log_data ( username, passwd) values (:name, :p)';
+$prepare = $db->prepare($sql); # 準備
+$prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1
+$prepare->bindValue(':p', $p, PDO::PARAM_STR);
+$prepare->bindValue(':p2', $p2, PDO::PARAM_STR);  
+
 # 送信されたデータの取得
 $name = $_POST['username'];  # ID
 $p = $_POST['password'];  # パスワード
 $p2 = $_POST['password_conf'];  # パスワード
 
-$err =[]
-require 'db.php'; # 接続
-$sql = 'insert into  log_data ( username, passwd) values (:name, :p)';
-$prepare = $db->prepare($sql); # 準備
-
-$prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1
-$prepare->bindValue(':p', $p, PDO::PARAM_STR);         # 埋め込み2
+$err =[]       # 埋め込み2
 
 $p2 = filter_input(INPUT_POST, "password_conf");
 if($p !== $p2){

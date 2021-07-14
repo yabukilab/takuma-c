@@ -12,10 +12,6 @@ $p = $_POST['password'];  # パスワード
 $p2 = $_POST['password_conf'];  # パスワード
 
 $err =[]       # 埋め込み2
-
-
-  
-}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -37,7 +33,7 @@ if (count($err) === 0) {
   if(!$hasCreated) {
     $err[] = '登録に失敗しました';
   }
-
+}
 if (count($err) > 0) : ?>
   <?php foreach($err as $e) : ?>
     <p><?php echo $e ?></p>

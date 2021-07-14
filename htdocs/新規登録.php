@@ -24,7 +24,7 @@ $err =[]       # 埋め込み2
 <body>
 <?php if($p !== $p2){
   $p2 = filter_input(INPUT_POST, "password_conf");
-  $err[] =　"確認用のパスワードと異なっています"
+  $err[] =　"確認用のパスワードと異なっています";
 }
 if (count($err) === 0) {
   // ユーザを登録する処理

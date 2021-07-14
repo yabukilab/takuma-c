@@ -12,7 +12,7 @@
 $name = $_POST['username'];  # 商品名
 $p = $_POST['password'];  # 価格
 require 'db.php'; # 接続
-$sql = 'insert into  log_data ( username, passwd ) values (:name, :p)';
+$sql = 'insert into  user_data ( username, passwd ) values (:name, :p)';
 $prepare = $db->prepare($sql); # 準備
 
 $prepare->bindValue(':name', $name, PDO::PARAM_STR);   # 埋め込み1

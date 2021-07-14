@@ -18,7 +18,7 @@ if (isset($_POST['username'], $_POST['password'])) {
   $db = new PDO($dsn, $dbUser, $dbPass);
 
   //検索実行
-  $sql = 'select * from log_data where username = "'.$username.'"&& passwd = "'.$password.'"';
+  $sql = 'select * from user_data where username = "'.$username.'"&& passwd = "'.$password.'"';
 
   $prepare = $db->prepare($sql);
   $prepare->execute();

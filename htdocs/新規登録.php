@@ -12,17 +12,6 @@ $p = $_POST['password'];  # パスワード
 $p2 = $_POST['password_conf'];  # パスワード
 
 $err =[]       # 埋め込み2
-if($p !== $p2){
-  $p2 = filter_input(INPUT_POST, "password_conf");
-  $err[] =　"確認用のパスワードと異なっています"
-}
-if (count($err) === 0) {
-  // ユーザを登録する処理
-  $hasCreated = UserLogic::createUser($_POST);
-  
-  if(!$hasCreated) {
-    $err[] = '登録に失敗しました';
-  }
 
 
   
@@ -37,7 +26,19 @@ if (count($err) === 0) {
   <title>ユーザデータの追加完了</title>
 </head>
 <body>
-<?php if (count($err) > 0) : ?>
+<?php if($p !== $p2){
+  $p2 = filter_input(INPUT_POST, "password_conf");
+  $err[] =　"確認用のパスワードと異なっています"
+}
+if (count($err) === 0) {
+  // ユーザを登録する処理
+  $hasCreated = UserLogic::createUser($_POST);
+  
+  if(!$hasCreated) {
+    $err[] = '登録に失敗しました';
+  }
+
+if (count($err) > 0) : ?>
   <?php foreach($err as $e) : ?>
     <p><?php echo $e ?></p>
   <?php endforeach ?>

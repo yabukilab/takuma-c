@@ -2,9 +2,7 @@
 session_start(); // セッションを開始する．
 if (!isset($_SESSION['username'])) { // ログインしていないなら，
   header('Location: ログイン.php');     // ログインページへ転送する．
-}
-$username = $_SESSION['username']; // ユーザ名を思い出す．
-  }
+  $username = $_SESSION['username']; // ユーザ名を思い出す．
 } // ユーザ名とパスワードが送信されていないなら以下のフォームを表示する．
 
 

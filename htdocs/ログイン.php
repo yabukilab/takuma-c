@@ -23,6 +23,8 @@ if (isset($_POST['username'], $_POST['password'])) {
   $prepare = $db->prepare($sql);
   $prepare->execute();
   $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+  $prepare->bindValue(':username', $username, PDO::PARAM_STR);   # 埋め込み1
+  $prepare->bindValue(':passwd', $password, PDO::PARAM_STR);         # 埋め込み2
 
   if ($result != null) {
        session_regenerate_id();//セッションを作り直す．

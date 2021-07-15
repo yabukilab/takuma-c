@@ -1,16 +1,18 @@
 <?php
-$dbServer = '127.0.0.1';
-$dbName = 'mydb';
-$dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
-$dbUser = 'test';
-$dbPass = 'pass';
+$t = echo date('G')."<br/>\n";
 
-$feeling = $POST["気分"];
+if(5 =< $t =< 11 ){
+    $NT = "朝";
+}else if(12 =< $t <= 17 ){
+    $NT = "昼";
+}else{
+    $NT = "夜";
+}
+$feeling = $POST["q1"];
 
 $db = new PDO($dsn, $dbUser, $dbPass);
 
-$sql = "SELECT * FROM time WHERE hourfrom<=hour(now))-5 and hour(now))-5<hourto";
-$sql = "SELECT * FROM music_data where feeling = "'.$feeling.'" and intB >= 10";
+$sql = "SELECT * FROM music_data where feeling = "'.$feeling.'";
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);

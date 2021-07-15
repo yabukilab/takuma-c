@@ -1,5 +1,11 @@
 <?php
-$t = echo date('G')."<br/>\n";
+//クラスを呼び出してオブジェクトを作成
+$objDateTime = new DateTime();
+ 
+//format()メソッドで現在日時を出力
+echo $objDateTime->format('H')."<br/>\n";
+$t = $objDateTime;
+
 
 if(5 =< $t =< 11 ){
     $NT = "朝";

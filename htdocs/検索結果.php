@@ -7,9 +7,9 @@ echo $objDateTime->format('H')."<br/>\n";
 $t = $objDateTime;
 
 
-if(5 =< $t =< 11 ){
+if(5 <= $t <= 11 ){
     $NT = "朝";
-}else if(12 =< $t <= 17 ){
+}else if(12 <= $t <= 17 ){
     $NT = "昼";
 }else{
     $NT = "夜";

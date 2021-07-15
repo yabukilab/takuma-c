@@ -1,7 +1,7 @@
 <?php
 session_start(); // セッションを開始する．
 $message = 'IDとパスワードを入力してください'; // デフォルトメッセージ
-
+require 'db.php'; # 接続
 if (isset($_POST['username'], $_POST['password'])) {
   $username = $_POST['username']; // フォームから送信されたユーザ名
   $password = $_POST['password']; // フォームから送信されたパスワード

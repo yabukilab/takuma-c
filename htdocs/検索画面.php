@@ -4,25 +4,6 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
   header('Location: ログイン.php');     // ログインページへ転送する．
 }
 $username = $_SESSION['username']; // ユーザ名を思い出す．
-
-if (isset($_POST['submit1'], $_POST['submit2'],$_POST['submit3'],$_POST['submit4'])) {
-  $submit = $_POST['submit1']; 
-  $submit = $_POST['submit2']; 
-  $submit = $_POST['submit3']; 
-  $submit = $_POST['submit4']; 
-  
-  if ($submit == 'submit1') {     
-    $_SESSION['submit1'] = true;      
-    header('Location: 検索結果.php'); 
-  } else if($submit == 'submit2'){ 
-    $_SESSION['submit2'] = true;      
-    header('Location: 検索結果.php'); 
-  } else if($submit == 'submit3'){ 
-    $_SESSION['submit3'] = true;      
-    header('Location: 検索結果.php'); 
-  }else{
-    $_SESSION['submit4'] = true; 
-    header('Location: 検索画面.php'); 
   }
 } // ユーザ名とパスワードが送信されていないなら以下のフォームを表示する．
 
@@ -39,11 +20,11 @@ if (isset($_POST['submit1'], $_POST['submit2'],$_POST['submit3'],$_POST['submit4
 <body>
   <p><?php echo $username;?>さん，ようこそ</p>
   <p>現在の気分を選択してください</p>
-  <form method="post" action="検索結果.php"　name="気分">
-    <p><input type="image" src="submit1.gif" width="224" height="224" alt="喜" value="喜" name="submit1"></p>
-    <p><input type="image" src="submit2.gif" width="224" height="224" alt="怒" value="怒" name="submit2"></p>
-    <p><input type="image" src="submit3.gif" width="224" height="224" alt="哀" value="哀" name="submit3"></p>
-    <p><input type="image" src="submit4.gif" width="224" height="224" alt="楽" value="楽" name="submit4"></p>
+  <form method="post" action="検索結果.php">
+    <p><input type=”radio” name=”q1″ value=”喜”> 喜</p>
+    <p><input type=”radio” name=”q1″ value=”怒”> 怒</p>
+    <p><input type=”radio” name=”q1″ value=”哀”> 哀</p>
+    <p><input type=”radio” name=”q1″ value=”楽”> 楽</p>
 </form>
   <p><a href="ログアウト.php">ログアウト</a></p>
 </body>

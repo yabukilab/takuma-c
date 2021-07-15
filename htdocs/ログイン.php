@@ -9,7 +9,7 @@ if (isset($_POST['username'], $_POST['password'])) {
  //データベースに問い合わせる
   //データベース接続設定
   $dbServer = '127.0.0.1';
-  $dbName = 'takumac';
+  $dbName = 'mydb';
   $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
   $dbUser = 'test';
   $dbPass = 'pass';

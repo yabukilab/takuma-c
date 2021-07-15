@@ -1,6 +1,5 @@
 <?php
 session_start(); // セッションを開始する．
-require_once 'db.php';
 $message = 'IDとパスワードを入力してください'; // デフォルトメッセージ
 
 if (isset($_POST['username'], $_POST['password'])) {

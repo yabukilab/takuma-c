@@ -16,7 +16,6 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
   <title>メンバページ</title>
 </head>
 <body>
-  <p><?php echo $username;?>さん，ようこそ</p>
   <p>現在の気分を選択してください</p>
   <form method="post" action="検索結果.php">
     <p><input type=”radio” name=”q1″ value=”喜”> 喜</p>

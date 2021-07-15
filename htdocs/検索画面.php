@@ -17,12 +17,12 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
 </head>
 <body> 
   <form method="post" action="検索結果.php">
-  <p>現在の気分を選択してください</p>
+  現在の気分を選択してください
     <input type=”radio” name=”q1″ value=”喜”　required> 喜
     <input type=”radio” name=”q1″ value=”怒”> 怒
     <input type=”radio” name=”q1″ value=”哀”> 哀
     <input type=”radio” name=”q1″ value=”楽”> 楽
-  <p><a href="ログアウト.php">ログアウト</a></p>
   </from>
+  <a href="ログアウト.php">ログアウト</a>
 </body>
 </html>

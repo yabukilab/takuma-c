@@ -11,7 +11,7 @@ if (isset($_POST['username'], $_POST['password'])) {
   $dbServer = '127.0.0.1';
   $dbName = 'mydb';
   $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
-  $dbUser = 'test';
+  $dbUser = 'testuser';
   $dbPass = 'pass';
 
   //データベースへの接続

@@ -1,21 +1,22 @@
 <?php
 session_start(); // セッションを開始する．
 $message = 'IDとパスワードを入力してください'; // デフォルトメッセージ
-require 'db.php'; # 接続
 if (isset($_POST['username'], $_POST['password'])) {
   $username = $_POST['username']; // フォームから送信されたユーザ名
   $password = $_POST['password']; // フォームから送信されたパスワード
 
  //データベースに問い合わせる
   //データベース接続設定
-  $dbServer = '127.0.0.1';
-  $dbName = 'mydb';
-  $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
-  $dbUser = 'testuser';
-  $dbPass = 'pass';
+  // $dbServer = '127.0.0.1';
+  // $dbName = 'mydb';
+  // $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
+  // $dbUser = 'testuser';
+  // $dbPass = 'pass';
 
   //データベースへの接続
-  $db = new PDO($dsn, $dbUser, $dbPass);
+  // $db = new PDO($dsn, $dbUser, $dbPass);
+
+  require 'db.php'; # 接続
 
   //検索実行
   $sql = 'select * from user_data where username = "'.$username.'"&& passwd = "'.$password.'"';
@@ -23,8 +24,6 @@ if (isset($_POST['username'], $_POST['password'])) {
   $prepare = $db->prepare($sql);
   $prepare->execute();
   $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
-  $prepare->bindValue(':username', $username, PDO::PARAM_STR);   # 埋め込み1
-  $prepare->bindValue(':passwd', $password, PDO::PARAM_STR);         # 埋め込み2
 
   if ($result != null) {
        session_regenerate_id();//セッションを作り直す．

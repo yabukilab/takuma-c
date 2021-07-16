@@ -6,6 +6,8 @@
   <title>メンバページ</title>
 </head>
 <body> 
+    <h1>検索結果</h1>
+<p><a href="検索画面.php">こちらから検索画面に戻れます．</a></p>
 <table border=“1”>
 <tr>
 <th>musicID</th>

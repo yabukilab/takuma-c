@@ -24,7 +24,7 @@
                 }?>
     <?php $feeling = $_POST["q1"];?>
     <?php require 'db.php'; ?>
-    <?php $sql = 'SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"';
+    <?php $sql = 'SELECT * FROM music_data';
     $prepare = $db->prepare($sql);
     $prepare->execute();
     $result = $prepare->fetchAll(PDO::FETCH_ASSOC); ?>

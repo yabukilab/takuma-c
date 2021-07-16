@@ -23,7 +23,7 @@ $prepare->bindValue(':name', $name, PDO::PARAM_STR); ?>
 
 <?php 
 foreach ($result as $r) {
-  echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'].;   
+  echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'];  
 
   echo "<br/>";
 }

@@ -22,8 +22,7 @@
     <?php $sql = 'SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"';
     $prepare = $db->prepare($sql);
     $prepare->execute();
-    $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
-    $prepare->bindValue(':name', $name, PDO::PARAM_STR); ?>
+    $result = $prepare->fetchAll(PDO::FETCH_ASSOC); ?>
     <?php 
     foreach ($result as $r) {
         echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'];  

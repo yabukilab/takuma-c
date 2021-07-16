@@ -9,8 +9,8 @@
 
 <?php
 # 送信されたデータの取得
-$name = $_POST['username'];  # 商品名
-$p = $_POST['password'];  # 価格
+$name = $_POST['username'];  # ID
+$p = $_POST['password'];  # pass
 require 'db.php'; # 接続
 $sql = 'insert into  user_data ( username, passwd ) values (:name, :p)';
 $prepare = $db->prepare($sql); # 準備

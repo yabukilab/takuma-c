@@ -1,29 +1,27 @@
 <?php
-//クラスを呼び出してオブジェクトを作成
-$objDateTime = new DateTime();
- 
-//format()メソッドで現在日時を出力
-echo $objDateTime->format('H')."<br/>\n";
-$t = $objDateTime;
+$t = intval(date('H'));
 
 
-if(5 <= $t <= 11 ){
-    $NT = "朝";
-}else if(12 <= $t <= 17 ){
-    $NT = "昼";
-}else{
-    $NT = "夜";
-}
+if(5 <= $t && $t <= 11 ){
+    $NT = "朝";?>
+<?php }else if(12 <= $t && $t <= 17 ){
+    $NT = "昼";?>
+<?php}else{
+    $NT = "夜";?>
+<?php}?>
+<?php 
 $feeling = $POST["q1"];
 
-$db = new PDO($dsn, $dbUser, $dbPass);
+require 'db.php'; ?># 接続
+//$db = new PDO($dsn, $dbUser, $dbPass);
 
-$sql = "SELECT * FROM music_data where feeling = "'.$feeling.'";
+<?php $sql = "SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'";
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
-$prepare->bindValue(':name', $name, PDO::PARAM_STR); 
+$prepare->bindValue(':name', $name, PDO::PARAM_STR); ?>
 
+<?php 
 foreach ($result as $r) {
   echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'].';   
 

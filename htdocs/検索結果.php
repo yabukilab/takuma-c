@@ -17,8 +17,7 @@
                 }?>
     <?php print ($_POST["q1"]);?>
     <?php $feeling = $_POST["q1"];?>
-    <?php require 'db.php'; ?># 接続
-    //$db = new PDO($dsn, $dbUser, $dbPass);
+    <?php require 'db.php'; ?>
     <?php $sql = 'SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"';
     $prepare = $db->prepare($sql);
     $prepare->execute();

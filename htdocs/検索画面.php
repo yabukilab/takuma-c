@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
 </head>
 <body> 
   <form method="post" action="検索結果.php">
-  現在の気分を選択してください<br>
+  <font size="4">現在の気分を選択してください</font><br>
     <input type="radio" name="q1" value="喜" style="transform:scale(3.0);" required> <img src="submit1.gif" alt="喜" title="喜">
     <input type="radio" name="q1" value="怒" style="transform:scale(3.0);"> <img src="submit2.gif" alt="怒" title="怒"><br>
     <input type="radio" name="q1" value="哀" style="transform:scale(3.0);"> <img src="submit3.gif" alt="哀" title="哀">

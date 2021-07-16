@@ -21,6 +21,6 @@ $prepare->bindValue(':p', $p, PDO::PARAM_STR);         # 埋め込み2
 $prepare->execute(); # 実行
 ?>
 
-    <p>登録完了．<a href="index.php">ログインし直してください．</a></p>
+    <p>登録完了．<a href="index.php"><font size="6">ログインし直してください．</font></a></p>
   </body>
 </html>

@@ -15,7 +15,7 @@ if(5 <= $t && $t <= 11 ){
 <?php require 'db.php'; ?># 接続
 //$db = new PDO($dsn, $dbUser, $dbPass);
 
-<?php $sql = "SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"";
+<?php $sql = 'SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);

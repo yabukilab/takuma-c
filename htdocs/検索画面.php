@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
     <input type="radio" name="q1" value="哀" style="transform:scale(3.0);"> <img src="submit3.gif" alt="哀" title="哀">
     <input type="radio" name="q1" value="楽" style="transform:scale(3.0);"> <img src="submit4.gif" alt="楽" title="楽"><br><br>
     <p>       </p>
-    <input type="submit" value="検索" style="transform:scale(3.0);"/>
+    <input type="submit" value="検索" style="transform:scale(2.0);"/>
   </from>
   <a href="ログアウト.php">ログアウト</a>
 </body>

@@ -48,7 +48,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 </head>
 <body>
   <?php echo $message;?>
-  <form action="ログイン.php" method="post">
+  <form action="index.php" method="post">
     <ul style="list-style-type: none;">
       <li><input type="text" name="username" placeholder="ID" /></li>
       <li><input type="password" name="password" placeholder="パスワード" /></li>

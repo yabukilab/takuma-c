@@ -9,10 +9,10 @@ if(5 <= $t && $t <= 11 ){
 <?php}else{
     $NT = "夜";?>
 <?php}?>
-<?php 
-$feeling = $POST["q1"];
+<?php print ($_POST["q1"]);?>
+<?php $feeling = $_POST["q1"];?>
 
-require 'db.php'; ?># 接続
+<?php require 'db.php'; ?># 接続
 //$db = new PDO($dsn, $dbUser, $dbPass);
 
 <?php $sql = "SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'";

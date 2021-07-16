@@ -8,10 +8,13 @@
 <body> 
     <?php
     $t = intval(date('H'));
-    if(5 <= $t && $t <= 11 ){$NT = "朝";?>
-    <?php}else{
-        $NT = "夜";?>
-        <?php}?>
+    if(5 <= $t && $t <= 11 ){
+        $NT = "朝";?>
+        <?php}else if(12 <= $t && $t <= 17){
+            $NT = "昼";?>
+            <?php}else{
+                $NT = "夜";?>
+<?php}?>
     <?php print ($_POST["q1"]);?>
     <?php $feeling = $_POST["q1"];?>
     <?php require 'db.php'; ?># 接続

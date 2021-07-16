@@ -28,6 +28,7 @@
     foreach ($result as $r) {
         echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'];  
         echo "<br/>";
+        $endb = null;
     }?>
 </body>
 </html>

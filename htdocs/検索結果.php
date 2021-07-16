@@ -6,6 +6,13 @@
   <title>メンバページ</title>
 </head>
 <body> 
+<table border=“1”>
+<tr>
+<th>musicID</th>
+<th>musicname</th>
+<th>arthist</th>
+<th>musicURL</th>
+</tr>
     <?php
     $t = intval(date('H'));
     if(5 <= $t && $t <= 11 ){
@@ -15,7 +22,6 @@
             }else{
                 $NT = "夜";
                 }?>
-    <?php print ($_POST["q1"]);?>
     <?php $feeling = $_POST["q1"];?>
     <?php require 'db.php'; ?>
     <?php $sql = 'SELECT * FROM music_data where feeling = "'.$feeling.'" and time = "'.$NT.'"';
@@ -23,10 +29,14 @@
     $prepare->execute();
     $result = $prepare->fetchAll(PDO::FETCH_ASSOC); ?>
     <?php 
-    foreach ($result as $r) {
-        echo $r['musicID'].' '.$r['musicname'].' '.$r['arthist'].''.$r['musicURL'];  
+    foreach ($result as $row) {
+        $musicID = h($row['musicID']);
+        $musicname = h($row['musicname']);
+        $arthist = h($row['arthist']);
+        $musicURL = h($row['musicURL']);
+        echo "<tr><td>{$musicID}</td><td>{$musicname}</td><td>{$arthist}</td><td>{$musicURL}</td></tr>";  
         echo "<br/>";
-        $endb = null;
-    }?>
+    }
+    ?>
 </body>
 </html>

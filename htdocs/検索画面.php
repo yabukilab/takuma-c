@@ -21,8 +21,8 @@ if (!isset($_SESSION['username'])) { // ログインしていないなら，
     <input type="radio" name="q1" value="喜" required> 喜
     <input type="radio" name="q1" value="怒"> 怒
     <input type="radio" name="q1" value="哀">哀
-    <input type="radio" name="q1" value="楽">楽
-    <input type="submit" value="検索" />
+    <input type="radio" name="q1" value="楽">楽</br>
+    <input type="submit" value="検索" /></br>
   </from>
   <a href="ログアウト.php">ログアウト</a>
 </body>
